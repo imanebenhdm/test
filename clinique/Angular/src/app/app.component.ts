@@ -17,7 +17,8 @@ export class AppComponent implements OnInit {
     const credentials = Realm.Credentials.anonymous();
     try {
       const user: Realm.User = await app.logIn(credentials);
-   this.patients = await user.functions['getAllPatient']();
+   console.log(user);
+      this.patients = await user.functions['getAllPatient']();
    console.log(this.patients);
       if (user.id === app.currentUser?.id)  return user
     else 
