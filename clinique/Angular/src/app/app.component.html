@@ -6,6 +6,11 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div>
+<ol>
+  <li *ngfor="let patient of patients">{{patient.nom}}</li>
+</ol>
+</div>
 
 <style>
   :host {
