@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
       this.logIn();
   }
+  
   title = 'Angular';
   patients: {"nom":string , "prenom":string}[] = [];
   async logIn(){
@@ -28,4 +29,5 @@ export class AppComponent implements OnInit {
     return undefined;
   }
 }
+
 }
