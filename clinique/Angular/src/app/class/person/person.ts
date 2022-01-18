@@ -7,8 +7,8 @@ export class Person {
         this.prenom = p;
         this.genre = g;
     }
-    getNomComplet(){
-        return this.prenom + " " + this.nom;
+    getNomComplet(d:string){
+        return d + this.prenom + " " + this.nom;
     }
     getNomFormate(){
         let formatName = "";
