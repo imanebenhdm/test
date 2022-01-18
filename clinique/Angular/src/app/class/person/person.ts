@@ -24,7 +24,7 @@ export class Person {
     }
 }
 
-enum genre{
+export enum genre{
     mal , 
     femelle
 }
