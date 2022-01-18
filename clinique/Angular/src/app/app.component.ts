@@ -1,5 +1,5 @@
 import { Component , OnInit } from '@angular/core';
-import * as Realm from "realm-web";
+import { DbManagerService } from './service/dbManager/db-manager.service';
 
 @Component({
   selector: 'app-root',
@@ -7,27 +7,17 @@ import * as Realm from "realm-web";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  patients: {"nom":string , "prenom":string}[] = [];
+  constructor(private dbManger : DbManagerService){
+
+  }
   ngOnInit(): void {
-      this.logIn();
+      this.dbManger.logIn();
+      this.patients = this.dbManger.patients;
   }
   
-  title = 'Angular';
-  patients: {"nom":string , "prenom":string}[] = [];
-  async logIn(){
-    const app: Realm.App = new Realm.App({ id: "application-1-cgglg" });
-    const credentials = Realm.Credentials.anonymous();
-    try {
-      const user: Realm.User = await app.logIn(credentials);
-   console.log(user);
-      this.patients = await user.functions['getAllPatient']();
-   console.log(this.patients);
-      if (user.id === app.currentUser?.id)  return user
-    else 
-      return undefined
-    }catch(err) {
-      console.error("Failed to log in", err);
-    return undefined;
-  }
+  
+  
 }
 
 }
