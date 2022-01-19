@@ -1,7 +1,8 @@
 
 <div>
 <ol>
-  <li *ngFor="let patient of patients">{{patient.nom}}</li>
+  <li *ngFor="let patient of patients">{{patient.nom + " " + patient.prenom + " " + patient.anneeNaissance}}</li>
+  
 </ol>
 </div>
 

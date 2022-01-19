@@ -7,12 +7,16 @@ import { DbManagerService } from './service/dbManager/db-manager.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  patients: {"nom":string , "prenom":string}[] = [];
+  patients: {"nom":string , "prenom":string , "anneeNaissance" : number}[] = [];
   constructor(private dbManger : DbManagerService){
 
   }
   ngOnInit(): void {
-      this.dbManger.logIn().then(()=>{this.patients = this.dbManger.patients;});
+      this.dbManger.logIn().then(()=>{
+        this.dbManger.getAllPatient().then(()=>{
+          this.patients = this.dbManger.patients;});
+        })
+        
       
   }
   

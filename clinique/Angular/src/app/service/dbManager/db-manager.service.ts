@@ -4,8 +4,8 @@ import * as Realm from "realm-web";
   providedIn: 'root'
 })
 export class DbManagerService {
-  title = 'Clinique';
-  patients: {"nom":string , "prenom":string}[] = [];
+  title = "Clinique";
+  patients: {"nom":string , "prenom":string , "anneeNaissance" : number}[] = [];
     app : Realm.App;
     user! : Realm.User;
   constructor() {
@@ -16,8 +16,7 @@ export class DbManagerService {
     try {
     this.user = await this.app.logIn(credentials);
        console.log(this.user);
-    this.patients = await this.user.functions['getAllPatient']();
-   console.log(this.patients);
+   //console.log(this.patients);
       if (this.user.id === this.app.currentUser?.id)  return this.user
     else 
       return undefined
@@ -25,5 +24,9 @@ export class DbManagerService {
       console.error("Failed to log in", err);
     return undefined;
   }
+}
+async getAllPatient(){
+  this.patients = await this.user.functions['getAllPatient']();
+  return this.patients;
 }
 }
