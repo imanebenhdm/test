@@ -12,12 +12,11 @@ export class AppComponent implements OnInit {
 
   }
   ngOnInit(): void {
-      this.dbManger.logIn();
-      this.patients = this.dbManger.patients;
+      this.dbManger.logIn().then(()=>{this.patients = this.dbManger.patients;});
+      
   }
   
   
   
 }
 
-}

@@ -4,23 +4,26 @@ import * as Realm from "realm-web";
   providedIn: 'root'
 })
 export class DbManagerService {
-
-  constructor() { }
   title = 'Clinique';
   patients: {"nom":string , "prenom":string}[] = [];
+    app : Realm.App;
+    user! : Realm.User;
+  constructor() {
+    this.app = new Realm.App({ id: "application-1-cgglg" });
+   }
   async logIn(){
-    const app: Realm.App = new Realm.App({ id: "application-1-cgglg" });
     const credentials = Realm.Credentials.anonymous();
     try {
-      const user: Realm.User = await app.logIn(credentials);
-   console.log(user);
-      this.patients = await user.functions['getAllPatient']();
+    this.user = await this.app.logIn(credentials);
+       console.log(this.user);
+    this.patients = await this.user.functions['getAllPatient']();
    console.log(this.patients);
-      if (user.id === app.currentUser?.id)  return user
+      if (this.user.id === this.app.currentUser?.id)  return this.user
     else 
       return undefined
     }catch(err) {
       console.error("Failed to log in", err);
     return undefined;
   }
+}
 }
