@@ -15,12 +15,7 @@ export class AppComponent implements OnInit {
       this.dbManger.logIn().then(()=>{
         this.dbManger.getAllPatient().then(()=>{
           this.patients = this.dbManger.patients;});
-        })
-        
-      
+        })   
   }
-  
-  
-  
 }
 

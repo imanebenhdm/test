@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import * as Realm from "realm-web";
+
 @Injectable({
   providedIn: 'root'
 })
 export class DbManagerService {
-  title = "Clinique";
+  
   patients: {"nom":string , "prenom":string , "anneeNaissance" : number , "genre" : string}[] = [];
     app : Realm.App;
     user! : Realm.User;
