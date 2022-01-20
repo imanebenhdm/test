@@ -7,7 +7,7 @@ import { DbManagerService } from './service/dbManager/db-manager.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  patients: {"nom":string , "prenom":string , "anneeNaissance" : number}[] = [];
+  patients: {"nom":string , "prenom":string , "anneeNaissance" : number , "genre" : string}[] = [];
   constructor(private dbManger : DbManagerService){
 
   }
