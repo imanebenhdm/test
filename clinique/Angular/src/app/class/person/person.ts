@@ -14,11 +14,10 @@ export class Person {
         let formatName = "";
         switch (this.genre){
             case genre.mal:
-               // formatName += "M." + this.prenom.charAt(0).toUpperCase + " " + this.nom.toUpperCase;
-               formatName += "M." + this.prenom + " " + this.nom;
+               formatName += "M." + this.prenom.charAt(0).toUpperCase() + " " + this.nom.toUpperCase();
             break;
             case genre.femelle:
-                formatName += "Mme." + this.prenom.charAt(0).toUpperCase + " " + this.nom.toUpperCase;
+                formatName += "Mme." + this.prenom.charAt(0).toUpperCase() + " " + this.nom.toUpperCase();
             break;
         }
         return formatName;

@@ -27,7 +27,7 @@ export class DbManagerService {
   }
 }
 async getAllPatient(){
-  this.patients = await this.user.functions['getAllPatient']();
+this.patients = await this.user.functions['getAllPatient']();
   return this.patients;
 }
 }
