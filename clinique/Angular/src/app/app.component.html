@@ -6,3 +6,17 @@
 </ol>
 </div>
 
+<div>
+  <ol>
+    <li *ngFor="let parametres of parametres">{{parametres.logo + "nom de l'etablissement: " +parametres.nomEtablissement + " " + parametres.nomDirecteur }}</li>
+    
+  </ol>
+  </div>
+
+  <div>
+    <ol>
+      <li *ngFor="let interventions of interventions">{{interventions.nomIntervention + " " + interventions.prix}}</li>
+      
+    </ol>
+    </div>
+  
