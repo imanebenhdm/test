@@ -7,7 +7,7 @@ import * as Realm from "realm-web";
 export class DbManagerService {
   
   patients: {"nom":string , "prenom":string , "anneeNaissance" : number , "genre" : string}[] = [];
-  parametres: {"logo":string , "nomEtablissement":string, "nomDirecteur":string} [] = [] ;  
+  parametres: {"logo":string , "nomEtablissement":string, "nomDirecteur":string, "TVA":string} [] = [] ;  
   interventions: {"nomIntervention":string, "prix":number} [] = [];
     app : Realm.App;
     user! : Realm.User;

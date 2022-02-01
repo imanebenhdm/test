@@ -8,7 +8,7 @@ import { Person , genre } from "./class/person/person";
 })
 export class AppComponent implements OnInit {
  patients: {"nom":string , "prenom":string , "anneeNaissance" : number , "genre" : string}[] = [];
- parametres: {"logo":string , "nomEtablissement":string, "nomDirecteur":string} [] = [] ;
+ parametres: {"logo":string , "nomEtablissement":string, "nomDirecteur":string, "TVA":string} [] = [] ;
  interventions: {"nomIntervention":string , "prix":number} [] = [];
   a = new Person("Ben" , "tad" , 1);
 

@@ -1,21 +1,29 @@
 
 <div>
 <ol>
-  <li *ngFor="let patient of patients">{{patient.genre + " " + patient.nom + " " + patient.prenom + " " + patient.anneeNaissance}}</li>
+  <li *ngFor="let patient of patients">
+    {{patient.genre + " " + patient.nom + " " + patient.prenom + " " + patient.anneeNaissance}}</li>
   
 </ol>
 </div>
 
 <div>
   <ol>
-    <li *ngFor="let parametres of parametres">{{parametres.logo + "nom de l'etablissement: " +parametres.nomEtablissement + " " + parametres.nomDirecteur }}</li>
+    <li *ngFor="let par of parametres">
+      {{"Logo: " +par.logo}} <br> 
+      {{"Nom de l'etablissement: " +par.nomEtablissement}} <br> 
+      {{"Nom du directeur: " + par.nomDirecteur }} <br>
+      {{"TVA: " + par.TVA }}
+    </li>
     
   </ol>
   </div>
 
   <div>
     <ol>
-      <li *ngFor="let interventions of interventions">{{interventions.nomIntervention + " " + interventions.prix}}</li>
+      <li *ngFor="let interventions of interventions">
+        {{"Nom de l'intervention: " +interventions.nomIntervention}}<br> 
+        {{"Prix de l'intervention: " +interventions.prix}}</li>
       
     </ol>
     </div>
