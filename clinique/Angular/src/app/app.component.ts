@@ -10,8 +10,7 @@ export class AppComponent implements OnInit {
  patients: {"nom":string , "prenom":string , "anneeNaissance" : number , "genre" : string}[] = [];
  parametres: {"logo":string , "nomEtablissement":string, "nomDirecteur":string, "TVA":string} [] = [] ;
  interventions: {"nomIntervention":string , "prix":number} [] = [];
-  a = new Person("Ben" , "tad" , 1);
-
+ a = new Person("Ben" , "tad" , 1); 
  constructor(private dbManger : DbManagerService){
 
   }
@@ -23,7 +22,8 @@ export class AppComponent implements OnInit {
         this.dbManger.getAllParametre().then(()=>{
             this.parametres = this.dbManger.parametres;});  
         this.dbManger.getAllIntervention().then(()=>{
-          this.interventions = this.dbManger.interventions;});  
+          this.interventions = this.dbManger.interventions;}); 
+        
       })   
       
   }
